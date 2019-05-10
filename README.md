@@ -3,6 +3,8 @@ Go语言实战学习
 
 ## 目录
 
+[第2章 快速开始一个Go程序](#ch2)
+
 [第3章 打包和工具链](#ch3)
 
 [第4章 数组、切片和映射](#ch4)
@@ -10,6 +12,17 @@ Go语言实战学习
 [第8章 标准库](#ch8)
 
 [第9章 测试和性能](#ch9)
+
+
+<span id="ch2"> </span>
+### 第2章 快速开始一个Go程序
+> 解析json数据，放到结构体数组中
+``` golang
+var feeds []*Feed
+err = json.NewDecoder(file).Decode(&feeds)
+return feeds, err
+```
+
 
 <span id="ch3"> </span>
 ### 第3章 打包和工具链
