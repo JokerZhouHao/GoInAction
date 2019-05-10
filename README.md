@@ -216,7 +216,7 @@ func main() {
 <span id="ch9"> </span>
 ### 第9章 测试和性能
 
-> golang测试工具要求测试的go文件必须以`_test`结尾，对于基础单元测试的函数必须是`func TestXXX...(t *testing.T){ . . . }`结构；对于基准测试的函数必须是`func BenchmarkXXX...(b *testing.B) { . . . }`结构，在测试点前要调用`b.resetTimer()`重置计时器。
+> golang测试工具要求测试的go文件必须以`_test`结尾，对于基础单元测试的函数必须是`func TestXXX...(t *testing.T){ . . . }`结构；对于基准测试的函数必须是`func BenchmarkXXX...(b *testing.B) { . . . for i := 0; i < b.N; i++ { . . . } . . . }`结构，在测试点前要调用`b.resetTimer()`重置计时器。
 
 **基础单元测试**: 测试当前路径下的所有Test函数：go test -v -test；测试指定函数：go test -v -test="要测试的函数名，支持正则表达式"
 ``` golang
