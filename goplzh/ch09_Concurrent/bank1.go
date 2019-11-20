@@ -1,0 +1,28 @@
+package main
+
+var deposits = make(chan int)
+var balances = make(chan int)
+
+func Deposit(amount int)  {
+	deposits <- amount
+}
+
+func Balance() int {
+	return <-balances
+}
+
+func teller()  {
+	var balance int // balace is confined to teller goroutine
+	for {
+		select {
+		case amount := <-deposits:
+			balance += amount
+		case balances <- balance:
+		}
+	}
+}
+
+func init()  {
+	go teller()
+}
+
