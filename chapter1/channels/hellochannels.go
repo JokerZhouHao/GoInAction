@@ -12,10 +12,14 @@ func printer(ch chan int) {
 		fmt.Printf("Received %d ", i)
 	}
 	wg.Done()
+
 }
 
 // main is the entry point for the program.
 func main() {
+
+	fmt.Println("hello world")
+
 	c := make(chan int)
 	go printer(c)
 	wg.Add(1)
