@@ -11,8 +11,8 @@ func printer(ch chan int) {
 	for i := range ch {
 		fmt.Printf("Received %d ", i)
 	}
-	wg.Done()
 
+	wg.Done()
 }
 
 // main is the entry point for the program.

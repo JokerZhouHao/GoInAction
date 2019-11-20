@@ -2,8 +2,9 @@ package search
 
 import (
 	"encoding/json"
-	"github.com/goinaction/code/Global"
 	"os"
+
+	"github.com/goinaction/Global"
 )
 
 const dataFile = Global.PathBase + "code/chapter2/sample/data/data.json"
